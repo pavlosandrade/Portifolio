@@ -1,59 +1,55 @@
 import React from 'react';
 
 export const techIcons: Record<string, React.ReactNode> = {
-  // =====================
-  // Linguagens
-  // =====================
+  // ==========================================
+  // LINGUAGENS
+  // ==========================================
   csharp: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 2L28.1244 8.99999V23L16 30L3.87564 23V8.99999L16 2Z" fill="#9B4993" />
-      <path d="M16 4.5L25.9615 10.25V21.75L16 27.5L6.03848 21.75V10.25L16 4.5Z" fill="#68217A" />
-      <path d="M15.2 11.5C13.2 11.5 11.8 12.8 11.8 15.2C11.8 17.6 13.2 18.9 15.2 18.9C16.3 18.9 17.2 18.5 17.8 17.8L19.1 19C18.2 20 16.8 20.6 15.1 20.6C12 20.6 9.8 18.5 9.8 15.2C9.8 11.9 12 9.8 15.1 9.8C16.8 9.8 18.1 10.4 19 11.4L17.7 12.6C17.1 11.9 16.2 11.5 15.2 11.5Z" fill="#FFFFFF" />
-      <path d="M21.8 12.5H22.7V11H23.6V12.5H24.5V13.4H23.6V14.6H24.5V15.5H23.6V17H22.7V15.5H21.8V17H20.9V15.5H20V14.6H20.9V13.4H20V12.5H20.9V11H21.8V12.5ZM21.8 13.4V14.6H22.7V13.4H21.8Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0z" fill="#9B4993" />
+      <path d="M78.6 92.4c-5.5 2.7-11.6 4-18.2 4-7.9 0-15-2-21.2-6-6.3-4-11.2-9.5-14.7-16.5C21 66.9 19.3 58.9 19.3 50c0-8.9 1.8-16.8 5.3-23.8 3.6-7 8.5-12.5 14.8-16.5C45.6 5.7 52.7 3.7 60.6 3.7c6.6 0 12.7 1.3 18.2 4v15.4c-5.3-2.9-11-4.3-17.1-4.3-5.5 0-10.4 1.4-14.7 4.3-4.3 2.9-7.7 6.9-10 12.1-2.4 5.2-3.6 11.1-3.6 17.7 0 6.6 1.2 12.5 3.6 17.7 2.4 5.2 5.7 9.2 10 12.1 4.3 2.9 9.2 4.3 14.7 4.3 6.1 0 11.8-1.4 17.1-4.3v15.4zm22.7-18.7h-6l2-10.9h6l2.2-11.9h-6l2-10.9h-11.3l-2 10.9h-6l2.2-11.9h-11.3l-2.2 11.9h-4.1l-2 10.9h4.1l-2.2 11.9h-4.1l-2 10.9h11.3l2-10.9h6l-2 10.9h11.3l2-10.9h4.1l2-10.9zm-19.3-10.9h-6l2.2-11.9h6l-2.2 11.9z" fill="#FFFFFF" />
     </svg>
   ),
 
   typescript: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#3178C6" />
-      <path d="M13.8 13.2H6.6V11H16V13.2H13.8V23H11.4V13.2H13.8Z" fill="#FFFFFF" />
-      <path d="M22.5 14.8C20.6 14.8 19.5 15.8 19.5 17.2C19.5 19.8 24.3 19.3 24.3 21.4C24.3 22.2 23.5 22.8 22.3 22.8C20.9 22.8 19.6 22.1 18.9 21.2L17.2 22.7C18.3 24.1 20.2 25 22.3 25C25.1 25 26.8 23.5 26.8 21.2C26.8 18.5 22 19 22 17C22 16.4 22.6 15.9 23.5 15.9C24.6 15.9 25.5 16.5 26.1 17.1L27.6 15.5C26.6 14.3 25 13.7 23.4 13.7C23.1 13.7 22.8 14.1 22.5 14.8Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#3178C6" />
+      <path d="M72.9 50.8v10.5H58.1v56.2H43.9V61.3H29.1V50.8h43.8zm22.8 19.3c-1.3-.7-3.1-1.4-5.3-2-2.2-.6-4.2-1.3-6.1-2-1.9-.7-3.3-1.6-4.4-2.7-1.1-1.1-1.6-2.5-1.6-4.3 0-1.8.6-3.3 1.8-4.5 1.2-1.2 2.7-2.1 4.7-2.7 1.9-.6 4.1-.9 6.6-.9 3.2 0 6.3.5 9.1 1.6 2.8 1.1 4.9 2.5 6.4 4.3l-8.6 7.6c-.8-1-1.9-1.8-3.3-2.3-1.4-.6-3-.8-4.7-.8-1.5 0-2.7.3-3.7.8-.9.5-1.4 1.3-1.4 2.2 0 .9.5 1.7 1.4 2.3.9.6 2.1 1.1 3.5 1.6 1.4.5 3 .9 4.7 1.5 2.5.7 4.8 1.5 6.8 2.5 2 1 3.7 2.1 4.9 3.4 1.2 1.3 2.1 2.8 2.6 4.5.5 1.7.8 3.7.8 5.8 0 3.3-.8 6.2-2.3 8.7-1.5 2.5-3.7 4.4-6.4 5.7-2.8 1.3-6.1 2-10 2-4.1 0-7.8-.7-11-2-3.3-1.4-5.8-3.2-7.7-5.5l9-7.9c1.2 1.5 2.7 2.6 4.5 3.4 1.8.8 3.8 1.2 5.9 1.2 2.2 0 3.9-.4 5.2-1.2 1.3-.8 1.9-1.9 1.9-3.3 0-1.2-.5-2.2-1.5-3-1-1-2.4-1.8-4.1-2.5z" fill="#FFFFFF" />
     </svg>
   ),
 
   javascript: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#F7DF1E" />
-      <path d="M14.5 13.5V20.2C14.5 22.4 13.2 23.5 11.2 23.5C9.4 23.5 8.2 22.5 7.6 21.2L9.7 19.9C10.1 20.7 10.6 21.2 11.3 21.2C12 21.2 12.3 20.7 12.3 19.8V13.5H14.5Z" fill="#000000" />
-      <path d="M22.5 13.3C24.6 13.3 26 14.4 26.6 15.8L24.5 17C24.1 16.1 23.5 15.6 22.5 15.6C21.6 15.6 21 16.1 21 16.8C21 17.7 21.7 18.1 23.2 18.7C25.2 19.5 26.8 20.5 26.8 22.6C26.8 24.8 25 26.2 22.5 26.2C20.2 26.2 18.6 25 17.9 23.4L20 22.2C20.5 23.3 21.4 24 22.5 24C23.5 24 24.3 23.4 24.3 22.5C24.3 21.6 23.5 21.2 22.1 20.6C20.2 19.8 18.7 18.8 18.7 16.8C18.7 14.8 20.3 13.3 22.5 13.3Z" fill="#000000" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#F7DF1E" />
+      <path d="M29.5 110.1l11.4-6.9c2.4 4.2 4.6 7.7 9.8 7.7 5.1 0 8.3-2.1 8.3-10.2V58.6H74v42.4c0 14.5-8.5 21-20.7 21-11 0-17.5-5.8-23.8-11.9zM78.6 108.6l11.4-6.6c3.1 5 7.1 8.8 14.2 8.8 6 0 9.8-3 9.8-7.2 0-5-3.9-6.9-10.7-9.8-9.8-4.2-16.1-9.5-16.1-20.6 0-10.2 7.8-18 19.9-18 8.6 0 14.8 3.3 19.1 10.9L115 72.8c-2.4-4-5.6-6.1-10.6-6.1-4.7 0-7.6 2.6-7.6 6 0 4.3 3 6 9.3 8.7 11.2 4.8 17.8 9.8 17.8 21.8 0 12.3-9.7 18.8-22.6 18.8-12.7 0-19.9-6.5-22.7-13.4z" fill="#000000" />
     </svg>
   ),
 
   html5: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 3L6.5 27.5L16 30L25.5 27.5L28 3H4Z" fill="#E34F26" />
-      <path d="M16 28L23.7 25.8L25.8 5.2H16V28Z" fill="#EF652A" />
-      <path d="M16 11.2H11.5L11.8 14.8H16V11.2ZM16 18.5H16.1L13.8 17.9L13.6 15.7H11.9L12.3 19.9L16 20.9V18.5Z" fill="#EBEBEB" />
-      <path d="M16 11.2V14.8H20.2L19.8 19.9L16 20.9V23.4L22.2 21.7L22.8 14.8H16V11.2ZM16 6H7.9L8.4 11.2H16V6ZM16 6V8.6H23.5L23.7 6H16Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.1 113.8L9.5 6h109l-9.6 107.8-44.9 12.4-44.9-12.4z" fill="#E44D26" />
+      <path d="M64 117.1l36.5-10.1 7.8-88.6H64v98.7z" fill="#F16529" />
+      <path d="M64 49.9H44.6l-1.3-15h41.4l1.3-14.9H27.1l4 44.8H64V49.9zm0 33.6l-.1.1-16.3-4.4-1-11.7H31.7l2.1 23.3L64 97.4V83.5z" fill="#EBEBEB" />
+      <path d="M64 49.9h18.1l-1.7 19.3L64 73.6v14.9l29.8-8.2 4.1-45.5H64V49.9zm0-30H99l1.3-14.9H64v14.9z" fill="#FFFFFF" />
     </svg>
   ),
 
   css: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 3L6.5 27.5L16 30L25.5 27.5L28 3H4Z" fill="#1572B6" />
-      <path d="M16 28L23.7 25.8L25.8 5.2H16V28Z" fill="#33A9DC" />
-      <path d="M16 11.2H11.5L11.8 14.8H16V11.2ZM16 6H7.9L8.4 11.2H16V6ZM16 20.9L12.3 19.9L11.9 15.7H13.6L13.8 17.9L16 18.5V20.9Z" fill="#EBEBEB" />
-      <path d="M20.5 11.2L20.3 14.8H16V18.5H18.2L18.4 16.5H20.2L19.8 21.7L16 22.8V25.3L22.2 23.6L22.8 14.8H20.7L20.8 11.2H16V8.6H23.1L23.3 6H16V8.6H20.7L20.5 11.2Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.1 113.8L9.5 6h109l-9.6 107.8-44.9 12.4-44.9-12.4z" fill="#1572B6" />
+      <path d="M64 117.1l36.5-10.1 7.8-88.6H64v98.7z" fill="#33A9DC" />
+      <path d="M64 49.9H44.6l-1.3-15h41.4l1.3-14.9H27.1l4 44.8H64V49.9zm0 38.6l-16.3-4.4-1-11.7H31.7l2.1 23.3L64 102V88.5z" fill="#EBEBEB" />
+      <path d="M83.4 34.9l-1.3 15H64v14.9h16.8l-1.6 17.8L64 87.1v14.9l29.8-8.3 4.1-45.5.3-3.3 1-10.4H64v14.9h19.4z" fill="#FFFFFF" />
     </svg>
   ),
 
-  // =====================
-  // Frameworks & Libs
-  // =====================
+  // ==========================================
+  // FRAMEWORKS & LIBS
+  // ==========================================
   react: (
-    <svg viewBox="-12 -11 24 22" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="0" cy="0" r="2.2" fill="#00D8FF" />
-      <g stroke="#00D8FF" strokeWidth="1.15" fill="none">
+    <svg viewBox="-11.5 -10.23174 23 20.46348" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="0" cy="0" r="2.05" fill="#00D8FF" />
+      <g stroke="#00D8FF" strokeWidth="1" fill="none">
         <ellipse rx="11" ry="4.2" />
         <ellipse rx="11" ry="4.2" transform="rotate(60)" />
         <ellipse rx="11" ry="4.2" transform="rotate(120)" />
@@ -62,130 +58,127 @@ export const techIcons: Record<string, React.ReactNode> = {
   ),
 
   nextdotjs: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#000000" />
-      <path d="M22.5 24.5L12.3 11.3H10V20.7H11.8V13.8L20.7 25.5C21.3 25.2 21.9 24.9 22.5 24.5ZM20.2 11.3H22V19.2H20.2V11.3Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 180 180" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="90" cy="90" r="90" fill="#000000" />
+      <path d="M149.5 163.5L78.6 69.8H63.5V119.5H75.5V85.1L137.9 167.3C142.1 166.3 145.9 165.1 149.5 163.5ZM116.5 69.8H128.5V119.5H116.5V69.8Z" fill="#FFFFFF" />
     </svg>
   ),
 
   blazor: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#5C2D91" />
-      <path d="M17.5 7C12.5 7 8 10.5 8 15.5C8 19.2 10.4 22.4 13.9 23.8L12.5 26.5H20.5L18.7 23.5C21.8 22.1 24 19 24 15.5C24 10.5 19.5 7 17.5 7ZM16 11C18.2 11 20 12.8 20 15C20 17.2 18.2 19 16 19C13.8 19 12 17.2 12 15C12 12.8 13.8 11 16 11Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#512BD4" />
+      <path d="M74.8 20C41.8 20 15 46.8 15 79.8c0 22 11.9 41.3 29.8 51.9L32.5 147h62.6l-12.3-15.7c19-8.4 31.2-27.7 31.2-49.5C94 46.8 74.8 20 74.8 20zm-11 25.5c18.9 0 34.3 15.4 34.3 34.3 0 11.4-5.6 21.5-14.2 27.8L63.8 81.8V45.5zm-10.6 9.1v36.8L33.1 65.6A34.2 34.2 0 0 1 64 45.5c-.3 3-4.3 6.9-10.8 9.1z" fill="#FFFFFF" />
     </svg>
   ),
 
   dotnet: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#512BD4" />
-      <circle cx="9" cy="21" r="2" fill="#FFFFFF" />
-      <path d="M14 11H17.5C19.5 11 21 12.2 21 14.5C21 16.8 19.5 18 17.5 18H15.8V23H14V11ZM15.8 16.2H17.2C18.4 16.2 19.2 15.6 19.2 14.5C19.2 13.4 18.4 12.8 17.2 12.8H15.8V16.2Z" fill="#FFFFFF" />
-      <path d="M23 11H24.8V23H23V11Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#512BD4" />
+      <path d="M22 84c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm17-48h13.8c12.5 0 20.2 7.8 20.2 19.3 0 11.6-7.8 19.3-20.2 19.3H49.8V84H39V36zm10.8 28.5h3c6.6 0 10.3-3.8 10.3-9.2s-3.7-9.2-10.3-9.2h-3v18.4zm33.4-28.5H94v48H83.2V36zm19.6 0h22.6v9.8h-11.8v9.4h10.4v9.6H104v9.4h12.6V84h-23.4V36z" fill="#FFFFFF" />
     </svg>
   ),
 
   abp: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#0078D7" />
-      <path d="M16 6L7 11V21L16 26L25 21V11L16 6ZM16 9.5L22.5 13.1L16 16.7L9.5 13.1L16 9.5ZM9 15L15 18.3V23.7L9 20.3V15ZM17 23.7V18.3L23 15V20.3L17 23.7Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#0078D7" />
+      <path d="M64 24L26 44v40l38 20 38-20V44L64 24zm0 15.6l24.4 13.5L64 66.6 39.6 53.1 64 39.6zM35 60.5l24 13.3v27.2L35 87.7V60.5zm34 40.5V73.8l24-13.3v27.2L69 101z" fill="#FFFFFF" />
     </svg>
   ),
 
   mudblazor: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#594AE2" />
-      <path d="M16 6L25 10.5V21.5L16 26L7 21.5V10.5L16 6Z" stroke="#FFFFFF" strokeWidth="2" fill="none" />
-      <path d="M11 13L16 16L21 13" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-      <path d="M16 16V22" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="20" fill="#594AE2" />
+      <path d="M64 24L104 46v44L64 112 24 90V46L64 24z" stroke="#FFFFFF" strokeWidth="8" strokeLinejoin="round" fill="none" />
+      <path d="M42 56l22 12 22-12M64 68v28" stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </svg>
   ),
 
   tailwindcss: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.5 8C6 8 3.8 9.8 3 13.5C4.5 11.5 6.2 10.8 8.2 11.2C9.4 11.5 10.2 12.3 11.1 13.2C12.6 14.7 14.3 16.5 18.5 16.5C22 16.5 24.2 14.8 25 11C23.5 13 21.8 13.8 19.8 13.3C18.6 13 17.8 12.2 16.9 11.3C15.4 9.8 13.7 8 9.5 8ZM3 16.5C1.5 16.5.8 17.5.5 19.5C1.8 18 3 17.5 4.5 17.8C5.4 18 6 18.6 6.7 19.3C7.8 20.4 9.1 21.8 12.2 21.8C15.2 21.8 17 20.5 17.8 17.8C16.5 19.2 15.2 19.8 13.8 19.5C12.8 19.3 12.2 18.7 11.6 18C10.5 16.9 9.3 16.5 3 16.5Z" fill="#06B6D4" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M38.5 28C24.4 28 15.6 35.2 12.4 50c5.9-8 12.8-10.8 20.8-9.2 4.6.9 7.9 4.3 11.5 8 5.9 6 12.7 13.2 29.3 13.2 14.1 0 22.9-7.2 26.1-22-5.9 8-12.8 10.8-20.8 9.2-4.6-.9-7.9-4.3-11.5-8-5.9-6-12.7-13.2-29.3-13.2zm-26.1 34C-1.7 62-10.5 69.2-13.7 84c5.9-8 12.8-10.8 20.8-9.2 4.6.9 7.9 4.3 11.5 8 5.9 6 12.7 13.2 29.3 13.2 14.1 0 22.9-7.2 26.1-22-5.9 8-12.8 10.8-20.8 9.2-4.6-.9-7.9-4.3-11.5-8-5.9-6-12.7-13.2-29.3-13.2z" transform="translate(30, 16)" fill="#06B6D4" />
     </svg>
   ),
 
   bootstrap: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="32" height="32" rx="6" fill="#7952B3" />
-      <path d="M12 8H17.5C19.8 8 21.5 9.2 21.5 11.2C21.5 12.5 20.7 13.5 19.5 14C21 14.5 22 15.8 22 17.5C22 19.8 20.1 21.5 17.5 21.5H12V8ZM14.8 10.5V13.5H17.2C18.2 13.5 18.8 12.8 18.8 12C18.8 11.2 18.2 10.5 17.2 10.5H14.8ZM14.8 15.8V19H17.5C18.6 19 19.2 18.2 19.2 17.4C19.2 16.6 18.6 15.8 17.5 15.8H14.8Z" fill="#FFFFFF" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" rx="24" fill="#7952B3" />
+      <path d="M47 34h31c12.7 0 21.8 6.5 21.8 17.5 0 7-4.4 12.6-11.2 15.4 8.7 2.8 14.4 9.1 14.4 18.1 0 13.2-10.6 22-24.8 22H47V34zm15.4 14.3v17.5H76c4.9 0 8.4-3.5 8.4-8.8 0-5.2-3.5-8.7-8.4-8.7H62.4zm0 30.5v19.7h14.7c5.8 0 9.7-3.9 9.7-9.8 0-6-3.9-9.9-9.7-9.9H62.4z" fill="#FFFFFF" />
     </svg>
   ),
 
-  // =====================
-  // Arquitetura
-  // =====================
+  // ==========================================
+  // ARQUITETURA & BOAS PRÁTICAS
+  // ==========================================
   architecture: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 4L4 10L16 16L28 10L16 4Z" fill="#0284C7" />
-      <path d="M4 16L16 22L28 16" stroke="#0284C7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M4 22L16 28L28 22" stroke="#0284C7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M64 16L16 40l48 24 48-24-48-24z" fill="#0284C7" />
+      <path d="M16 64l48 24 48-24" stroke="#0284C7" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16 88l48 24 48-24" stroke="#0284C7" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
 
   modular: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="9" height="9" rx="2.5" fill="#8B5CF6" />
-      <rect x="18" y="5" width="9" height="9" rx="2.5" fill="#8B5CF6" />
-      <rect x="5" y="18" width="9" height="9" rx="2.5" fill="#8B5CF6" />
-      <rect x="18" y="18" width="9" height="9" rx="2.5" fill="#C4B5FD" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="20" width="38" height="38" rx="10" fill="#8B5CF6" />
+      <rect x="70" y="20" width="38" height="38" rx="10" fill="#8B5CF6" />
+      <rect x="20" y="70" width="38" height="38" rx="10" fill="#8B5CF6" />
+      <rect x="70" y="70" width="38" height="38" rx="10" fill="#C4B5FD" />
     </svg>
   ),
 
   mvc: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="5" width="24" height="22" rx="4" stroke="#10B981" strokeWidth="2.5" fill="none" />
-      <line x1="4" y1="12" x2="28" y2="12" stroke="#10B981" strokeWidth="2" />
-      <line x1="13" y1="12" x2="13" y2="27" stroke="#10B981" strokeWidth="2" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="16" y="20" width="96" height="88" rx="16" stroke="#10B981" strokeWidth="10" fill="none" />
+      <line x1="16" y1="48" x2="112" y2="48" stroke="#10B981" strokeWidth="10" />
+      <line x1="52" y1="48" x2="52" y2="108" stroke="#10B981" strokeWidth="10" />
     </svg>
   ),
 
   seo: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="13" stroke="#F59E0B" strokeWidth="2.2" fill="none" />
-      <path d="M9 17L13 13L17 17L23 11" stroke="#F59E0B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      <polyline points="19 11 23 11 23 15" stroke="#F59E0B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="64" cy="64" r="50" stroke="#F59E0B" strokeWidth="10" fill="none" />
+      <path d="M36 68l16-16 16 16 24-24" stroke="#F59E0B" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="76 44 92 44 92 60" stroke="#F59E0B" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
 
-  // =====================
-  // Ferramentas & DevOps
-  // =====================
+  // ==========================================
+  // FERRAMENTAS & DEVOPS
+  // ==========================================
   figma: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11 5C8.8 5 7 6.8 7 9C7 11.2 8.8 13 11 13H16V5H11Z" fill="#F24E1E" />
-      <path d="M16 5H21C23.2 5 25 6.8 25 9C25 11.2 23.2 13 21 13C18.8 13 16 13 16 13V5Z" fill="#FF7262" />
-      <path d="M7 16C7 13.8 8.8 12 11 12H16V20H11C8.8 20 7 18.2 7 16Z" fill="#A259FF" />
-      <path d="M16 16C16 13.8 17.8 12 20 12C22.2 12 24 13.8 24 16C24 18.2 22.2 20 20 20C17.8 20 16 20 16 20V16Z" fill="#1ABCFE" />
-      <path d="M7 23C7 20.8 8.8 19 11 19H16V23C16 25.2 14.2 27 12 27C9.8 27 7 25.2 7 23Z" fill="#0ACF83" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M44 20c-11 0-20 9-20 20s9 20 20 20h20V20H44z" fill="#F24E1E" />
+      <path d="M64 20h20c11 0 20 9 20 20s-9 20-20 20H64V20z" fill="#FF7262" />
+      <path d="M24 60c0-11 9-20 20-20h20v40H44c-11 0-20-9-20-20z" fill="#A259FF" />
+      <path d="M64 60h20c11 0 20 9 20 20s-9 20-20 20-20-9-20-20V60z" fill="#1ABCFE" />
+      <path d="M24 100c0-11 9-20 20-20h20v20c0 11-9 20-20 20s-20-9-20-20z" fill="#0ACF83" />
     </svg>
   ),
 
   azuredevops: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M28 8L22 4L11 8L5 13L2 21L7 27L18 29L26 24L30 15L28 8Z" fill="#0078D7" />
-      <path d="M7 13L15 6L23 11L18 17L11 19L7 13Z" fill="#50E6FF" />
-      <path d="M11 19L18 17L25 21L19 26L11 23V19Z" fill="#1B59A7" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M112 32l-24-16L44 32 20 52l-12 32 20 24 44 8 32-20 16-36-8-28z" fill="#0078D7" />
+      <path d="M28 52l32-28 32 20-20 24-28 8-16-24z" fill="#50E6FF" />
+      <path d="M44 76l28-8 28 16-24 20-32-12v-16z" fill="#1B59A7" />
     </svg>
   ),
 
   git: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30.4 14.6L17.4 1.6C16.6.8 15.4.8 14.6 1.6L11.7 4.5L15.3 8.1C16.2 7.8 17.3 8 18 8.7C18.7 9.4 19 10.5 18.6 11.4L22.2 15C23.1 14.6 24.2 14.9 24.9 15.6C25.9 16.6 25.9 18.2 24.9 19.2C23.9 20.2 22.3 20.2 21.3 19.2C20.6 18.5 20.3 17.4 20.7 16.5L17.3 13.1V20.7C17.5 21 17.6 21.4 17.6 21.8C17.6 23.2 16.4 24.4 15 24.4C13.6 24.4 12.4 23.2 12.4 21.8C12.4 20.7 13.1 19.8 14.1 19.4V11.8C13.1 11.4 12.4 10.5 12.4 9.4C12.4 8.9 12.6 8.5 12.8 8.1L9.2 4.5L1.6 12.1C.8 12.9.8 14.1 1.6 14.9L14.6 27.9C15.4 28.7 16.6 28.7 17.4 27.9L30.4 14.9C31.2 14.1 31.2 15.4 30.4 14.6Z" fill="#F05032" />
+    <svg viewBox="0 0 128 128" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M125.6 58.2L69.8 2.4c-3.2-3.2-8.4-3.2-11.6 0L42.6 18l14.4 14.4c3.6-1.2 7.7-.4 10.6 2.5 2.9 2.9 3.7 7 2.5 10.6l14.4 14.4c3.6-1.2 7.7-.4 10.6 2.5 4.2 4.2 4.2 11 0 15.2-4.2 4.2-11 4.2-15.2 0-3-3-3.7-7.4-2.2-11.1L64.4 53.2v30.4c1.6.8 3 2.1 3.9 3.7 3.2 5.5 1.3 12.5-4.2 15.7s-12.5 1.3-15.7-4.2c-3.2-5.5-1.3-12.5 4.2-15.7 1.8-1 3.8-1.5 5.8-1.3V52.7c-2-.2-4-.7-5.8-1.7l-14.3 14.3c1.2 3.6.4 7.7-2.5 10.6-4.2 4.2-11 4.2-15.2 0-4.2-4.2-4.2-11 0-15.2 2.9-2.9 7-3.7 10.6-2.5L38.4 44 2.4 80c-3.2 3.2-3.2 8.4 0 11.6l55.8 55.8c3.2 3.2 8.4 3.2 11.6 0l55.8-55.8c3.2-3.2 3.2-8.4 0-11.6z" fill="#F05032" />
     </svg>
   ),
 
   github: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M16 2C8.27 2 2 8.27 2 16C2 22.19 6.02 27.44 11.61 29.3C12.31 29.43 12.57 29 12.57 28.63C12.57 28.3 12.55 27.21 12.55 26.04C8.67 26.89 7.85 24.37 7.85 24.37C7.22 22.75 6.3 22.33 6.3 22.33C5.03 21.47 6.4 21.48 6.4 21.48C7.8 21.58 8.54 22.92 8.54 22.92C9.79 25.05 11.82 24.44 12.62 24.08C12.75 23.18 13.11 22.56 13.51 22.21C10.41 21.86 7.15 20.67 7.15 15.34C7.15 13.82 7.69 12.58 8.58 11.61C8.44 11.26 7.96 9.84 8.71 7.92C8.71 7.92 9.88 7.55 12.54 9.35C13.65 9.04 14.83 8.89 16 8.88C17.17 8.89 18.35 9.04 19.46 9.35C22.12 7.55 23.29 7.92 23.29 7.92C24.04 9.84 23.56 11.26 23.42 11.61C24.31 12.58 24.85 13.82 24.85 15.34C24.85 20.68 21.58 21.86 18.47 22.2C18.97 22.63 19.41 23.48 19.41 24.78C19.41 26.65 19.39 28.15 19.39 28.63C19.39 29.01 19.64 29.44 20.36 29.3C25.96 27.43 29.98 22.18 29.98 16C29.98 8.27 23.72 2 16 2Z" fill="#181717" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M64 8C33.1 8 8 33.1 8 64c0 24.8 16.1 45.8 38.4 53.2 2.8.5 3.8-1.2 3.8-2.7 0-1.3-.1-5.6-.1-10.2-15.6 3.4-18.9-6.6-18.9-6.6-2.5-6.5-6.2-8.2-6.2-8.2-5.1-3.5.4-3.4.4-3.4 5.6.4 8.6 5.8 8.6 5.8 5 8.6 13.1 6.1 16.3 4.7.5-3.6 2-6.1 3.6-7.5-12.4-1.4-25.5-6.2-25.5-27.7 0-6.1 2.2-11.1 5.8-15-0.6-1.4-2.5-7.1.6-14.8 0 0 4.7-1.5 15.4 5.8 4.5-1.3 9.3-1.9 14.1-1.9 4.8 0 9.6.6 14.1 1.9 10.7-7.3 15.4-5.8 15.4-5.8 3.1 7.7 1.2 13.4.6 14.8 3.6 3.9 5.8 8.9 5.8 15 0 21.6-13.1 26.2-25.6 27.6 2 1.8 3.9 5.2 3.9 10.5 0 7.6-.1 13.7-.1 15.6 0 1.5 1 3.3 3.9 2.7C103.9 109.8 120 88.8 120 64c0-30.9-25.1-56-56-56z" fill="#181717" />
     </svg>
   ),
 
   clickup: (
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 22L8.5 18.5C12.5 22.5 19.5 22.5 23.5 18.5L28 22C22 28 10 28 4 22Z" fill="#7B68EE" />
-      <path d="M16 6L20.5 10.5L17.5 13.5L16 12L14.5 13.5L11.5 10.5L16 6Z" fill="#FF007A" />
+    <svg viewBox="0 0 128 128" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 88l18-14c16 16 44 16 60 0l18 14C88 112 40 112 16 88z" fill="#7B68EE" />
+      <path d="M64 24l18 18-12 12-6-6-6 6-12-12 18-18z" fill="#FF007A" />
     </svg>
   ),
 };
