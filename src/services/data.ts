@@ -1,4 +1,4 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const basePath = process.env.NODE_ENV === "production" ? "/Portifolio" : "";
 
 export const profileData = {
   name: "Pavlos Kallidis",
