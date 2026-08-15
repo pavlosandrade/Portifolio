@@ -1,3 +1,5 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const profileData = {
   name: "Pavlos Kallidis",
   role: "Desenvolvedor Front-End Sênior",
@@ -24,7 +26,7 @@ export const aboutData = {
     name: "Pavlos Kallidis",
     role: "Desenvolvedor Front-End Sênior & .NET",
     location: "Ribeirão Preto, SP",
-    photoUrl: "/images/profile.jpg"
+    photoUrl: `${basePath}/images/profile.jpg`
   },
   stats: [
     {
@@ -63,8 +65,7 @@ export const skillsData = [
       { name: "React", icon: "react" },
       { name: "Next.js", icon: "nextdotjs" },
       { name: "Blazor", icon: "blazor" },
-      { name: "ASP.NET MVC", icon: "dotnet" },
-      { name: ".NET", icon: "dotnet" },
+      { name: ".NET / ASP.NET", icon: "dotnet" },
       { name: "ABP Framework", icon: "abp" },
       { name: "MudBlazor", icon: "mudblazor" },
       { name: "Tailwind CSS", icon: "tailwindcss" },
@@ -72,18 +73,18 @@ export const skillsData = [
     ]
   },
   {
-    category: "Arquitetura & Práticas",
+    category: "Arquitetura & Boas Práticas",
     items: [
-      { name: "DDD", icon: "architecture" },
-      { name: "MVC", icon: "mvc" },
-      { name: "Component-Based", icon: "modular" },
-      { name: "SEO & Performance", icon: "seo" },
+      { name: "Clean Architecture", icon: "architecture" },
+      { name: "Modular / Component-Based", icon: "modular" },
+      { name: "Padrão MVC", icon: "mvc" },
+      { name: "SEO Técnico & Core Web Vitals", icon: "seo" },
     ]
   },
   {
     category: "Ferramentas & DevOps",
     items: [
-      { name: "Figma", icon: "figma" },
+      { name: "Figma (UI/UX)", icon: "figma" },
       { name: "Azure DevOps", icon: "azuredevops" },
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
@@ -166,7 +167,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Site Institucional",
     year: "2023",
-    image: "/images/cases/terras-altas-case.jpg",
+    image: `${basePath}/images/cases/terras-altas-case.jpg`,
     description: "Desenvolvimento do site institucional em colaboração com o time de design, desde a concepção de rafes e layout no Figma até a implementação final, homologação e entrega.",
     link: "#",
     techs: ["C#", "ASP.NET Core MVC", "JavaScript", "Bootstrap", "Figma", "Azure DevOps"],
@@ -178,7 +179,7 @@ export const projectsData = [
     company: "BP One Group",
     type: "WebAPP B2B",
     year: "2024",
-    image: "/images/cases/bayer-case.jpg",
+    image: `${basePath}/images/cases/bayer-case.jpg`,
     description: "Criação de novos módulos e funcionalidades dentro do ecossistema B2B, implementando componentes com MudBlazor e desenvolvendo regras de negócio e integrações robustas orientadas a DDD.",
     link: "#",
     techs: ["C# / .NET", "ABP Framework", "MudBlazor", "Blazor", "DDD"],
@@ -190,7 +191,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Site Híbrido",
     year: "2024",
-    image: "/images/cases/wtcrp-case.jpg",
+    image: `${basePath}/images/cases/wtcrp-case.jpg`,
     description: "Desenvolvimento completo do site institucional em arquitetura híbrida Blazor Web App, unindo fidelidade visual do Figma com escalabilidade do ecossistema .NET moderno.",
     link: "#",
     techs: ["C# / .NET", "Blazor Web App", "Bootstrap", "Figma", "Azure DevOps"],
@@ -202,7 +203,7 @@ export const projectsData = [
     company: "BP One Group",
     type: "Landing Page",
     year: "2024",
-    image: "/images/cases/amazon-alexa-case.jpg",
+    image: `${basePath}/images/cases/amazon-alexa-case.jpg`,
     description: "Implementação e otimização da Landing Page oficial, com foco em melhorias gerais de SEO técnico, Core Web Vitals e máxima performance.",
     link: "#",
     techs: ["Next.js", "TypeScript", "React", "Tailwind CSS", "SEO"],
@@ -214,7 +215,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Site Institucional",
     year: "2024",
-    image: "/images/cases/dabi-case.jpg",
+    image: `${basePath}/images/cases/dabi-case.jpg`,
     description: "Desenvolvimento do site institucional em colaboração com o time de design, desde o rafe até o layout no Figma, seguido da implementação em ASP.NET Core MVC.",
     link: "#",
     techs: ["C#", "ASP.NET Core MVC", "MVC", "Bootstrap", "JavaScript", "Figma", "Azure DevOps"],
@@ -226,7 +227,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Landing Page",
     year: "2024",
-    image: "/images/cases/bhrama-case.jpg",
+    image: `${basePath}/images/cases/bhrama-case.jpg`,
     description: "Desenvolvimento da landing page em Blazor Web App (.NET 8) com arquitetura component-based e modular com base no layout enviado pelo cliente.",
     link: "#",
     techs: ["C# / .NET 8", "Blazor Web App", "Bootstrap", "JavaScript", "Azure DevOps"],
@@ -238,7 +239,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Site Híbrido",
     year: "2024",
-    image: "/images/cases/spl-case.jpg",
+    image: `${basePath}/images/cases/spl-case.jpg`,
     description: "Desenvolvimento do site institucional e comercial em Blazor Web App (.NET 10) junto ao time de design, desde a concepção de rafe até a entrega final.",
     link: "#",
     techs: ["C# / .NET 10", "Blazor Web App", "Component-Based", "Bootstrap", "JavaScript", "Figma", "Azure DevOps"],
@@ -250,7 +251,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Landing Page",
     year: "2023",
-    image: "/images/cases/kipapp-case.jpg",
+    image: `${basePath}/images/cases/kipapp-case.jpg`,
     description: "Desenvolvimento de Landing Page de alta conversão, da concepção visual e wireframes à definição do Design System e prototipação no Figma.",
     link: "#",
     techs: ["Figma", "UX/UI", "Design System", "Prototipação", "ClickUp"],
@@ -262,7 +263,7 @@ export const projectsData = [
     company: "Nova Singular",
     type: "Menu Digital",
     year: "2023",
-    image: "/images/cases/sr-menu-case.jpg",
+    image: `${basePath}/images/cases/sr-menu-case.jpg`,
     description: "Criação visual e estruturação de temas para plataforma de cardápio digital, incluindo wireframes, componentes e prototipagem navegável no Figma.",
     link: "#",
     techs: ["Figma", "UX/UI", "Design System", "Prototipação", "ClickUp"],
