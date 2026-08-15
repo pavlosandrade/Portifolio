@@ -1,0 +1,52 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111d2b;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  will-change: transform;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+  will-change: opacity, transform, filter;
+}
+
+.accentLine {
+  width: 48px;
+  height: 2px;
+  background: var(--accent, #f5d4ac);
+  border-radius: 2px;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  will-change: opacity, transform;
+}

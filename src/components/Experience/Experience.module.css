@@ -1,0 +1,182 @@
+.section {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background: var(--bg-secondary);
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #bf9561;
+  background: #ffffff;
+  border: 1px solid #e3e5e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  padding: 0.35rem 0.95rem;
+  border-radius: 100px;
+}
+
+.badge svg {
+  color: #bf9561;
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+/* Lista de empresas */
+.companies {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* Empresa */
+.company {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.companyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.companyName {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.companyMeta {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Timeline de cargos */
+.roles {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.roleItem {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* Track visual da linha do tempo */
+.timelineTrack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #bf9561;
+  border: 2px solid var(--bg-secondary);
+  box-shadow: 0 0 0 2px #bf9561;
+  margin-top: 6px;
+  flex-shrink: 0;
+  will-change: transform, opacity;
+  transition: box-shadow 0.3s ease;
+}
+
+.lineTrack {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  margin: 6px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.lineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #bf9561;
+  transform-origin: top;
+  transform: scaleY(0);
+  will-change: transform;
+}
+
+/* Conteúdo de cada cargo */
+.roleContent {
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.roleTitle {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.roleMeta {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.descriptionList {
+  padding-left: 1.1rem;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.descriptionList li {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+/* Tags de skills */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.skill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #bf9561;
+  background: #fdfaf6;
+  border: 1px solid #e3e5e3;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+}

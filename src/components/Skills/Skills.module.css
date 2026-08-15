@@ -1,0 +1,147 @@
+.section {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background: var(--bg-primary);
+}
+
+/* Cabeçalho com Statement */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2.25rem;
+  max-width: 680px;
+}
+
+.badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #bf9561;
+  background: #ffffff;
+  border: 1px solid #e3e5e3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  padding: 0.35rem 0.95rem;
+  border-radius: 100px;
+}
+
+.badge svg {
+  color: #bf9561;
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.statement {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Grupos */
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.categoryLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Linha fluida de ícones */
+.iconsRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2rem;
+  padding-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .iconsRow {
+    gap: 1.75rem 2.5rem;
+  }
+}
+
+.iconItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.iconItem:hover {
+  transform: translateY(-4px);
+}
+
+.iconWrapper {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iconItem:hover .iconWrapper {
+  border-color: #d1d5db;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+}
+
+.iconItem:hover .icon {
+  transform: scale(1.12);
+}
+
+.iconPlaceholder {
+  width: 26px;
+  height: 26px;
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.iconItem:hover .name {
+  color: var(--text-primary);
+  font-weight: 600;
+}

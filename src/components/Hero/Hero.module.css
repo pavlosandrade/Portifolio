@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100svh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-accent);
+  color: var(--text-on-accent);
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: auto 0;
+  width: 100%;
+}
+
+.focusItem {
+  will-change: transform, opacity, filter;
+  transform-origin: left center;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(3.25rem, 7.5vw, 5.75rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--text-on-accent);
+  max-width: 15ch;
+}
+
+.about {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-on-accent);
+  opacity: 0.88;
+  max-width: 580px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  will-change: transform, opacity, filter;
+}
+
+.button,
+.buttonOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.85rem;
+  border-radius: 100px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+}
+
+.button {
+  background: var(--accent);
+  color: var(--accent-foreground);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.buttonOutline {
+  background: transparent;
+  color: var(--text-on-accent);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.buttonOutline:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Indicador de rolagem sutil no rodapé */
+.scrollIndicator {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  will-change: opacity, transform;
+}
+
+.scrollMouse {
+  width: 20px;
+  height: 32px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-on-accent);
+  will-change: transform, opacity;
+}
