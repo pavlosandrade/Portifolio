@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Skills.module.css';
@@ -38,7 +39,7 @@ const cdnSlugs: Record<string, string> = {
 /**
  * Para conceitos abstratos (sem logo de marca), usamos ícones Lucide minimalistas.
  */
-const abstractIcons: Record<string, React.ReactNode> = {
+const abstractIcons: Record<string, ReactNode> = {
   architecture: (
     <svg viewBox="0 0 24 24" width="26" height="26" fill="none"
       stroke="#0284C7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
