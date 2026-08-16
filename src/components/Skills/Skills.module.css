@@ -112,13 +112,14 @@
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
 }
 
-.icon {
-  width: 26px;
-  height: 26px;
+.iconImage {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
   transition: transform 0.2s ease;
 }
 
-.iconItem:hover .icon {
+.iconItem:hover .iconImage {
   transform: scale(1.12);
 }
 
