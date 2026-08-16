@@ -11,8 +11,48 @@ const urbanist = Urbanist({
 
 
 export const metadata: Metadata = {
-  title: "Pavlos Kallidis de Andrade | Desenvolvedor Front-End",
-  description: "Portfólio de Pavlos Kallidis de Andrade, Desenvolvedor Front-End Pleno especialista em React, Next.js, e .NET.",
+  title: "Pavlos Kallidis de Andrade | Desenvolvedor Front-End & .NET",
+  description: "Portfólio de Pavlos Kallidis de Andrade. Desenvolvedor especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
+  keywords: [
+    "Pavlos Kallidis de Andrade", "Pavlos Andrade", "Desenvolvedor Front-End", 
+    "Desenvolvedor .NET", "Engenheiro de Software", "React", "Next.js", 
+    "TypeScript", "JavaScript", "C#", "Portfólio Web", "Brasil"
+  ],
+  authors: [{ name: "Pavlos Kallidis de Andrade", url: "https://pavlosandrade.github.io/Portifolio/" }],
+  creator: "Pavlos Kallidis de Andrade",
+  metadataBase: new URL("https://pavlosandrade.github.io/Portifolio/"),
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://pavlosandrade.github.io/Portifolio/",
+    title: "Pavlos Kallidis de Andrade | Desenvolvedor Front-End",
+    description: "Especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#). Conheça meu trabalho.",
+    siteName: "Pavlos Andrade Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // Imagem que será compartilhada (1200x630)
+        width: 1200,
+        height: 630,
+        alt: "Pavlos Kallidis de Andrade - Portfólio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pavlos Kallidis de Andrade | Desenvolvedor Front-End",
+    description: "Especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  other: {
+    // Geo tags para ajudar IAs locais e SEO regional
+    "geo.region": "BR",
+    "geo.placename": "Brasil",
+    "geo.position": "-14.2350;-51.9253",
+    "ICBM": "-14.2350, -51.9253"
+  }
 };
 
 import Header from "@/components/Header/Header";
