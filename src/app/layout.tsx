@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Pavlos Andrade Portfolio",
     images: [
       {
-        url: "/og-image.png", // Imagem que será compartilhada (1200x630)
+        url: "/og-image.jpg", // Imagem que será compartilhada (1200x630)
         width: 1200,
         height: 630,
         alt: "Pavlos Kallidis de Andrade - Portfólio",
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pavlos Kallidis de Andrade | Desenvolvedor Front-End",
     description: "Especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.jpg",
   },
   other: {
     // Geo tags para ajudar IAs locais e SEO regional
