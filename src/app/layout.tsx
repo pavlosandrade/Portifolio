@@ -43,9 +43,6 @@ export const metadata: Metadata = {
     description: "Especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
     images: ["/og-image.jpg"],
   },
-  icons: {
-    icon: "/icon.jpg",
-  },
   other: {
     // Geo tags para ajudar IAs locais e SEO regional
     "geo.region": "BR",
