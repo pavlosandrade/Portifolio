@@ -28,7 +28,7 @@ export default function Intro() {
         opacity: 0,
         y: 16,
         filter: 'blur(6px)',
-        duration: 0.35,
+        duration: 0.8,
         ease: 'power3.out',
       })
       // 2. Traço dourado de accent
@@ -37,10 +37,10 @@ export default function Intro() {
         {
           scaleX: 0,
           opacity: 0,
-          duration: 0.2,
+          duration: 0.6,
           ease: 'power3.out',
         },
-        '-=0.2'
+        '-=0.4'
       )
       // 3. Subtítulo
       .from(
@@ -48,26 +48,26 @@ export default function Intro() {
         {
           opacity: 0,
           y: 10,
-          duration: 0.25,
+          duration: 0.7,
           ease: 'power3.out',
         },
-        '-=0.15'
+        '-=0.3'
       )
       // 4. Fade out dos elementos internos
       .to([logoRef.current, lineRef.current, roleRef.current], {
         opacity: 0,
         y: -10,
-        duration: 0.2,
-        stagger: 0.03,
+        duration: 0.5,
+        stagger: 0.05,
         ease: 'power3.in',
-        delay: 0.1,
+        delay: 0.8,
       })
       // 5. Cortina sobe com aceleração cinematográfica
       .to(curtainRef.current, {
         yPercent: -100,
-        duration: 0.45,
+        duration: 0.85,
         ease: 'power4.inOut',
-      }, '-=0.08');
+      }, '-=0.15');
     });
 
     return () => {
