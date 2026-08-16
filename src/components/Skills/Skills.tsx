@@ -5,11 +5,57 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Skills.module.css';
 
+// React Icons
+import { 
+  SiJavascript, SiTypescript, SiHtml5, SiCss, SiReact, SiNextdotjs, 
+  SiBlazor, SiDotnet, SiTailwindcss, SiBootstrap, SiFigma, SiGit, 
+  SiGithub, SiClickup 
+} from 'react-icons/si';
+import { TbBrandCSharp } from 'react-icons/tb';
+import { VscAzureDevops } from 'react-icons/vsc';
+
+// Lucide Icons
+import { Layers, LayoutGrid, FileCode2, LineChart, Hexagon, Component } from 'lucide-react';
+
 gsap.registerPlugin(ScrollTrigger);
+
+// Mapeamento de ícones para as chaves do data.ts
+const iconMap: Record<string, { icon: React.ElementType, color: string }> = {
+  // Linguagens
+  csharp:     { icon: TbBrandCSharp, color: '#9B4993' },
+  typescript: { icon: SiTypescript,  color: '#3178C6' },
+  javascript: { icon: SiJavascript,  color: '#F7DF1E' },
+  html5:      { icon: SiHtml5,       color: '#E34F26' },
+  css:        { icon: SiCss,        color: '#1572B6' },
+  
+  // Frameworks & Libs
+  react:       { icon: SiReact,       color: '#61DAFB' },
+  nextdotjs:   { icon: SiNextdotjs,   color: '#000000' },
+  blazor:      { icon: SiBlazor,      color: '#512BD4' },
+  dotnet:      { icon: SiDotnet,      color: '#512BD4' },
+  tailwindcss: { icon: SiTailwindcss, color: '#06B6D4' },
+  bootstrap:   { icon: SiBootstrap,   color: '#7952B3' },
+  
+  // Ícones difíceis de encontrar em pacotes oficiais - usando fallbacks bonitos e inquebráveis
+  abp:         { icon: Layers,        color: '#0078D7' },
+  mudblazor:   { icon: Component,     color: '#594AE2' },
+  
+  // Ferramentas & DevOps
+  figma:       { icon: SiFigma,        color: '#F24E1E' },
+  azuredevops: { icon: VscAzureDevops, color: '#0078D7' },
+  git:         { icon: SiGit,          color: '#F05032' },
+  github:      { icon: SiGithub,       color: '#181717' },
+  clickup:     { icon: SiClickup,      color: '#7B68EE' },
+  
+  // Arquitetura & Boas Práticas
+  architecture: { icon: Hexagon,    color: '#0284C7' },
+  modular:      { icon: LayoutGrid, color: '#8B5CF6' },
+  mvc:          { icon: FileCode2,  color: '#10B981' },
+  seo:          { icon: LineChart,  color: '#F59E0B' },
+};
 
 export default function Skills({ data }: { data: any[] }) {
   const sectionRef = useRef<HTMLElement>(null);
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,21 +96,26 @@ export default function Skills({ data }: { data: any[] }) {
             <div key={group.category} className={styles.group}>
               <p className={styles.categoryLabel}>{group.category}</p>
               <div className={styles.iconsRow}>
-                {group.items.map((skill: any) => (
-                  <div key={skill.name} className={styles.iconItem} title={skill.name}>
-                    <div className={styles.iconWrapper}>
-                      <img 
-                        src={`${basePath}/icons/${skill.icon}.svg`} 
-                        alt={`Ícone do ${skill.name}`} 
-                        className={styles.iconImage}
-                        width={36}
-                        height={36}
-                        loading="lazy"
-                      />
+                {group.items.map((skill: any) => {
+                  const mapped = iconMap[skill.icon];
+                  
+                  return (
+                    <div key={skill.name} className={styles.iconItem} title={skill.name}>
+                      <div className={styles.iconWrapper}>
+                        {mapped ? (
+                          <mapped.icon 
+                            size={36} 
+                            color={mapped.color} 
+                            style={{ flexShrink: 0 }}
+                          />
+                        ) : (
+                          <div className={styles.iconPlaceholder} />
+                        )}
+                      </div>
+                      <span className={styles.name}>{skill.name}</span>
                     </div>
-                    <span className={styles.name}>{skill.name}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
