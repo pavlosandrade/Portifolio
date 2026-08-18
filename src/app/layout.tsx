@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     "geo.placename": "Brasil",
     "geo.position": "-14.2350;-51.9253",
     "ICBM": "-14.2350, -51.9253"
+  },
+  alternates: {
+    canonical: "https://pavlosandrade.github.io/Portifolio/",
   }
 };
 
@@ -61,8 +64,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://pavlosandrade.github.io/Portifolio/#profile",
+        "url": "https://pavlosandrade.github.io/Portifolio/",
+        "name": "Pavlos Kallidis de Andrade - Portfólio",
+        "isPartOf": {
+          "@id": "https://pavlosandrade.github.io/Portifolio/#website"
+        },
+        "about": {
+          "@id": "https://pavlosandrade.github.io/Portifolio/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://pavlosandrade.github.io/Portifolio/#person",
+        "name": "Pavlos Kallidis de Andrade",
+        "jobTitle": "Desenvolvedor Front-End Sênior",
+        "description": "Desenvolvedor especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
+        "url": "https://pavlosandrade.github.io/Portifolio/",
+        "sameAs": [
+          "https://www.linkedin.com/in/pavlos-kallidis-de-andrade-/",
+          "https://github.com/pavlosandrade",
+          "https://www.instagram.com/pavlosandrade/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ribeirão Preto",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "knowsAbout": ["Desenvolvimento Web", "React", "Next.js", ".NET", "C#", "Engenharia de Software"]
+      }
+    ]
+  };
+
   return (
     <html lang="pt-BR" className={urbanist.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <SmoothScroll>
           <Header />
