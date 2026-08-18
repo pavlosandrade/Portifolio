@@ -52,21 +52,42 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pavlosandrade.github.io/Portifolio/",
+  },
+  verification: {
+    google: "M3arvZvhm12sXkhgqz0C0DBvmOfBW1UBnQjivakv_oA",
   }
 };
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
+import { profileData, skillsData, experienceData } from "@/services/data";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Coletando todas as habilidades em um array simples para o 'knowsAbout'
+  const allSkills = skillsData.flatMap(category => category.items.map(item => item.name));
+  
+  // Pegando a empresa atual
+  const currentCompany = experienceData[0]?.company || "Freelancer";
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pavlosandrade.github.io/Portifolio/#website",
+        "url": "https://pavlosandrade.github.io/Portifolio/",
+        "name": "Pavlos Kallidis de Andrade - Portfólio",
+        "description": "Portfólio de Pavlos Kallidis de Andrade. Desenvolvedor especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
+        "publisher": {
+          "@id": "https://pavlosandrade.github.io/Portifolio/#person"
+        },
+        "inLanguage": "pt-BR"
+      },
       {
         "@type": "ProfilePage",
         "@id": "https://pavlosandrade.github.io/Portifolio/#profile",
@@ -82,22 +103,24 @@ export default function RootLayout({
       {
         "@type": "Person",
         "@id": "https://pavlosandrade.github.io/Portifolio/#person",
-        "name": "Pavlos Kallidis de Andrade",
-        "jobTitle": "Desenvolvedor Front-End Sênior",
-        "description": "Desenvolvedor especialista em Front-End (React, Next.js) e arquiteturas corporativas (.NET, C#).",
+        "name": profileData.name,
+        "jobTitle": profileData.role,
+        "description": profileData.about,
         "url": "https://pavlosandrade.github.io/Portifolio/",
-        "sameAs": [
-          "https://www.linkedin.com/in/pavlos-kallidis-de-andrade-/",
-          "https://github.com/pavlosandrade",
-          "https://www.instagram.com/pavlosandrade/"
-        ],
+        "email": profileData.email,
+        "telephone": profileData.phone,
+        "sameAs": Object.values(profileData.links),
+        "worksFor": {
+          "@type": "Organization",
+          "name": currentCompany
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ribeirão Preto",
           "addressRegion": "SP",
           "addressCountry": "BR"
         },
-        "knowsAbout": ["Desenvolvimento Web", "React", "Next.js", ".NET", "C#", "Engenharia de Software"]
+        "knowsAbout": allSkills
       }
     ]
   };
