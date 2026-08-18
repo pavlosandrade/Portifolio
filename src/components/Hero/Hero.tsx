@@ -4,8 +4,6 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Hero.module.css';
 
-const basePath = process.env.NODE_ENV === 'production' ? '/Portifolio' : '';
-
 export default function Hero({ data }: { data: any }) {
   const containerRef = useRef<HTMLElement>(null);
 
@@ -64,9 +62,9 @@ export default function Hero({ data }: { data: any }) {
         muted
         playsInline
         className={styles.videoBackground}
-        poster={`${basePath}/images/hero/poster-hero-video.jpg`}
+        poster="/images/hero/poster-hero-video.jpg"
       >
-        <source src={`${basePath}/images/hero/hero-animated-compressed.mp4`} type="video/mp4" />
+        <source src="/images/hero/hero-animated-compressed.mp4" type="video/mp4" />
       </video>
       <div className={styles.videoOverlay}></div>
 

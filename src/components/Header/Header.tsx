@@ -125,7 +125,7 @@ export default function Header() {
         });
       },
       {
-        rootMargin: '-10% 0px -85% 0px', // Foco no topo da tela (onde os olhos normalmente iniciam a leitura)
+        rootMargin: '-10% 0px -50% 0px', // Foco relaxado para conseguir pegar seções curtas no fim da página (ex: Contato)
         threshold: 0,
       }
     );
