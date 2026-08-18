@@ -47,7 +47,7 @@ const iconMap: Record<string, { icon?: React.ElementType, color?: string, imgSrc
   azuredevops: { icon: VscAzureDevops, color: '#0078D7' },
   git: { icon: SiGit, color: '#F05032' },
   github: { icon: SiGithub, color: '#181717' },
-  clickup: { icon: SiClickup, color: '#7B68EE' },
+  clickup: { imgSrc: `${basePath}/images/icons/clickup-ico.svg` },
 
   // Inteligência Artificial (Ícones Customizados)
   chatgpt: { imgSrc: `${basePath}/images/icons/chatgpt-ico.svg` },
