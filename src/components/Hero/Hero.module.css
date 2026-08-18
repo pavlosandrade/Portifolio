@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: calc(100svh - 80px);
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +13,8 @@
 }
 
 .inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -104,6 +106,7 @@
 /* Indicador de rolagem sutil no rodapé */
 .scrollIndicator {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   padding-top: 1.5rem;
@@ -126,4 +129,30 @@
   border-radius: 50%;
   background: var(--text-on-accent);
   will-change: transform, opacity;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), var(--bg-accent));
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .videoBackground {
+    display: none;
+  }
 }

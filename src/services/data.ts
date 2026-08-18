@@ -16,11 +16,12 @@ export const profileData = {
 
 export const aboutData = {
   badge: "Sobre mim",
-  headline: "Engenharia de software e interfaces para marcas globais e projetos de grande escala.",
+  headline: "Engenharia de software e produtos digitais para marcas globais e projetos de grande escala.",
   paragraphs: [
-    "Com mais de 5 anos de experiência no desenvolvimento de software e interfaces web, atuo unindo rigor de engenharia, arquitetura escalável e design de alta conversão (UX/UI).",
-    "Minha trajetória inclui a entrega de produtos digitais de alta visibilidade para marcas líderes do mercado — como Amazon (Alexa+), Brahma Barbearia, Bayer (Programa Prosperar) e World Trade Center Ribeirão Preto —, comprovando capacidade técnica e maturidade para assumir projetos complexos de ponta a ponta.",
-    "Do protótipo no Figma à arquitetura e implementação em C#, .NET, Blazor, React e Next.js, construo soluções robustas com foco em performance extrema, SEO técnico e usabilidade impecável."
+    "Com mais de 5 anos de experiência no desenvolvimento de software e produtos digitais, atuo unindo rigor de engenharia, arquitetura escalável e design de alta conversão (UX/UI).",
+    "Minha trajetória inclui a entrega de produtos digitais de alta visibilidade para marcas líderes do mercado, como Amazon (Alexa+), Brahma Barbearia, Bayer (Programa Prosperar) e World Trade Center Ribeirão Preto. Essa vivência comprova minha capacidade técnica e maturidade para assumir projetos complexos de ponta a ponta.",
+    "Do protótipo no Figma à arquitetura e implementação em C#, .NET, Blazor, React e Next.js, construo soluções robustas com foco em performance extrema, SEO técnico e usabilidade impecável.",
+    "Além disso, integro o uso avançado de Inteligência Artificial no meu dia a dia. Domino as capacidades de modelos líderes (como ChatGPT, Gemini e Claude) para otimizar fluxos de desenvolvimento, refatorar arquiteturas e resolver desafios complexos de engenharia com ganho massivo de produtividade."
   ],
   author: {
     name: "Pavlos Kallidis",
@@ -89,6 +90,14 @@ export const skillsData = [
       { name: "Git", icon: "git" },
       { name: "GitHub", icon: "github" },
       { name: "ClickUp", icon: "clickup" },
+    ]
+  },
+  {
+    category: "Inteligência Artificial",
+    items: [
+      { name: "ChatGPT", icon: "chatgpt" },
+      { name: "Gemini", icon: "gemini" },
+      { name: "Claude", icon: "claude" },
     ]
   }
 ];

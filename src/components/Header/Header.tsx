@@ -19,6 +19,8 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
   const menuRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
@@ -45,6 +47,21 @@ export default function Header() {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  // Detector de Scroll (Passivo para Alta Performance)
+  useEffect(() => {
+    const handleScrollEvent = () => {
+      setIsScrolled(window.scrollY > 50);
+      // Remove o menu ativo ao retornar à Hero
+      if (window.scrollY < 100) {
+        setActiveSection('');
+      }
+    };
+    window.addEventListener('scroll', handleScrollEvent, { passive: true });
+    // Inicializa o estado com o valor real
+    handleScrollEvent();
+    return () => window.removeEventListener('scroll', handleScrollEvent);
+  }, []);
 
   // Animação Cinematográfica de Abertura / Fechamento em Tela Cheia com GSAP
   useEffect(() => {
@@ -97,8 +114,44 @@ export default function Header() {
     }
   }, [isOpen]);
 
+  // Scroll Spy Cinematográfico via Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-10% 0px -85% 0px', // Foco no topo da tela (onde os olhos normalmente iniciam a leitura)
+        threshold: 0,
+      }
+    );
+
+    // Atraso sutil para garantir que os elementos renderizaram (Next.js client behavior)
+    const timeout = setTimeout(() => {
+      navItems.forEach((item) => {
+        const el = document.getElementById(item.targetId);
+        if (el) observer.observe(el);
+      });
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+      navItems.forEach((item) => {
+        const el = document.getElementById(item.targetId);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   const handleScroll = (e: React.MouseEvent, targetId: string) => {
     e.preventDefault();
+    
+    // Atraso dinâmico: só espera se a cortina mobile estiver sendo fechada
+    const delay = isOpen && window.innerWidth < 768 ? 400 : 0;
     setIsOpen(false);
 
     setTimeout(() => {
@@ -115,7 +168,7 @@ export default function Header() {
       } else {
         target.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 450);
+    }, delay);
   };
 
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -131,7 +184,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
         <div className={`${styles.navContainer} container`}>
           <button
             type="button"
@@ -149,7 +202,7 @@ export default function Header() {
                 key={item.targetId}
                 type="button"
                 onClick={(e) => handleScroll(e, item.targetId)}
-                className={styles.link}
+                className={`${styles.link} ${activeSection === item.targetId ? styles.activeLink : ''}`}
               >
                 {item.label}
               </button>
@@ -195,7 +248,7 @@ export default function Header() {
               key={item.targetId}
               type="button"
               onClick={(e) => handleScroll(e, item.targetId)}
-              className={styles.fullLink}
+              className={`${styles.fullLink} ${activeSection === item.targetId ? styles.activeFullLink : ''}`}
             >
               <span className={styles.linkLabel}>{item.label}</span>
             </button>

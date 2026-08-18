@@ -56,6 +56,18 @@ export default function Hero({ data }: { data: any }) {
 
   return (
     <section className={styles.hero} ref={containerRef}>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={styles.videoBackground}
+        poster="/images/hero/poster-hero-video.jpg"
+      >
+        <source src="/images/hero/hero-animated-compressed.mp4" type="video/mp4" />
+      </video>
+      <div className={styles.videoOverlay}></div>
+
       <div className={`${styles.inner} container`}>
         <p className={`${styles.role} ${styles.focusItem}`}>{data.role}</p>
         <h1 className={`${styles.title} ${styles.focusItem}`}>{data.name}</h1>
