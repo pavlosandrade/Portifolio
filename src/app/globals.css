@@ -1,22 +1,35 @@
 :root {
   /* Paleta Deep Oceanic Navy & Warm Apricot Accent */
-  --bg-primary: #f5f8fa;        /* Off-white com toque frio e limpo */
-  --bg-secondary: #ffffff;      /* Branco puro para cartões e respiros */
-  --bg-accent: #1e334a;         /* Azul Marinho Oceânico profundo (Hero & Contato) */
-  --bg-accent-dark: #111d2b;    /* Midnight Blue escuro para o rodapé */
+  --bg-primary: #f5f8fa;
+  /* Off-white com toque frio e limpo */
+  --bg-secondary: #ffffff;
+  /* Branco puro para cartões e respiros */
+  --bg-accent: #1e334a;
+  /* Azul Marinho Oceânico profundo (Hero & Contato) */
+  --bg-accent-dark: #111d2b;
+  /* Midnight Blue escuro para o rodapé */
 
-  --text-primary: #152230;      /* Carvão azulado de altíssimo contraste */
-  --text-secondary: #4e657e;    /* Azul ardósia suave para subtítulos */
-  --text-on-accent: #ffffff;    /* Branco puro sobre o azul */
+  --text-primary: #152230;
+  /* Carvão azulado de altíssimo contraste */
+  --text-secondary: #4e657e;
+  /* Azul ardósia suave para subtítulos */
+  --text-on-accent: #ffffff;
+  /* Branco puro sobre o azul */
 
   /* Accents & Badges */
-  --accent: #f5d4ac;            /* Warm Apricot Accent */
-  --accent-foreground: #152230; /* Texto escuro de alto contraste sobre o accent */
-  --accent-soft: #fdf6ee;       /* Fundo suave quente */
-  --accent-border: #f0c594;     /* Borda com tom quente */
-  --accent-dark: #9c6126;       /* Tom quente escuro para tipografia em fundos claros */
+  --accent: #f5d4ac;
+  /* Warm Apricot Accent */
+  --accent-foreground: #152230;
+  /* Texto escuro de alto contraste sobre o accent */
+  --accent-soft: #fdf6ee;
+  /* Fundo suave quente */
+  --accent-border: #f0c594;
+  /* Borda com tom quente */
+  --accent-dark: #9c6126;
+  /* Tom quente escuro para tipografia em fundos claros */
 
-  --border: #dbe4ed;            /* Borda suave azul-acinzentada */
+  --border: #dbe4ed;
+  /* Borda suave azul-acinzentada */
 
   /* Espaçamentos Calibrados & Compactos */
   --space-xs: 0.35rem;
@@ -30,13 +43,16 @@
   --font-mono: monospace;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -70,7 +86,7 @@ a {
 /* Container utilitário */
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
 }

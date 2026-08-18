@@ -7,17 +7,49 @@ import styles from './Projects.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Cores das badges por categoria de tecnologia
+const TECH_COLORS: Record<string, { bg: string; color: string; border: string }> = {
+  'C#': { bg: '#f0f4ff', color: '#4f46e5', border: '#e0e3ff' },
+  'C# / .NET': { bg: '#f0f4ff', color: '#7c3aed', border: '#ede9fe' },
+  'C# / .NET 8': { bg: '#f0f4ff', color: '#7c3aed', border: '#ede9fe' },
+  'C# / .NET 10': { bg: '#f0f4ff', color: '#7c3aed', border: '#ede9fe' },
+  'ASP.NET Core MVC': { bg: '#f0f4ff', color: '#6d28d9', border: '#ede9fe' },
+  'MVC': { bg: '#f5f3ff', color: '#6d28d9', border: '#ede9fe' },
+  'ABP Framework': { bg: '#fdf4ff', color: '#9333ea', border: '#f3e8ff' },
+  'MudBlazor': { bg: '#f0f4ff', color: '#4f46e5', border: '#e0e3ff' },
+  'Blazor': { bg: '#eff6ff', color: '#1d4ed8', border: '#dbeafe' },
+  'Blazor Web App': { bg: '#eff6ff', color: '#1d4ed8', border: '#dbeafe' },
+  'React': { bg: '#f0fdff', color: '#0891b2', border: '#cffafe' },
+  'Next.js': { bg: '#f4f4f4', color: '#18181b', border: '#d4d4d8' },
+  'TypeScript': { bg: '#eff6ff', color: '#1e40af', border: '#bfdbfe' },
+  'JavaScript': { bg: '#fefce8', color: '#854d0e', border: '#fef08a' },
+  'Tailwind CSS': { bg: '#f0fdfa', color: '#0f766e', border: '#99f6e4' },
+  'Bootstrap': { bg: '#fdf4ff', color: '#7e22ce', border: '#f3e8ff' },
+  'Figma': { bg: '#fff7ed', color: '#c2410c', border: '#fed7aa' },
+  'Azure DevOps': { bg: '#eff6ff', color: '#1e40af', border: '#bfdbfe' },
+  'Git': { bg: '#fff7ed', color: '#9a3412', border: '#fed7aa' },
+  'UX/UI': { bg: '#fdf2f8', color: '#be185d', border: '#fce7f3' },
+  'Design System': { bg: '#fdf2f8', color: '#be185d', border: '#fce7f3' },
+  'Prototipação': { bg: '#fdf2f8', color: '#be185d', border: '#fce7f3' },
+  'ClickUp': { bg: '#fdf4ff', color: '#9333ea', border: '#f3e8ff' },
+  'SEO': { bg: '#f0fdf4', color: '#15803d', border: '#bbf7d0' },
+  'DDD': { bg: '#f8fafc', color: '#475569', border: '#e2e8f0' },
+  'Component-Based': { bg: '#f8fafc', color: '#475569', border: '#e2e8f0' },
+  'Clean Architecture': { bg: '#f8fafc', color: '#475569', border: '#e2e8f0' },
+};
+
+const DEFAULT_TECH_STYLE = { bg: '#f8fafc', color: '#475569', border: '#e2e8f0' };
+
 export default function Projects({ data }: { data: any[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Divide os projetos em 3 colunas independentes para desktop/tablet
+  // Distribui os projetos em 3 colunas independentes
   const col1 = data.filter((_, i) => i % 3 === 0);
   const col2 = data.filter((_, i) => i % 3 === 1);
   const col3 = data.filter((_, i) => i % 3 === 2);
 
-  // Monitora o scroll do carrossel mobile para atualizar o índice ativo
   const handleCarouselScroll = () => {
     if (!carouselRef.current) return;
     const scrollLeft = carouselRef.current.scrollLeft;
@@ -37,36 +69,28 @@ export default function Projects({ data }: { data: any[] }) {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Cabeçalho da seção
       gsap.from(`.${styles.header}`, {
-        scrollTrigger: {
-          trigger: `.${styles.header}`,
-          start: 'top 85%',
-        },
+        scrollTrigger: { trigger: `.${styles.header}`, start: 'top 85%' },
         y: 42,
         opacity: 0,
         duration: 0.82,
         ease: 'power3.out',
       });
 
-      // Entrada suave escalonada dos cards no desktop
       gsap.from(`.${styles.desktopGrid} .${styles.card}`, {
-        scrollTrigger: {
-          trigger: `.${styles.desktopGrid}`,
-          start: 'top 85%',
-        },
-        y: 48,
+        scrollTrigger: { trigger: `.${styles.desktopGrid}`, start: 'top 85%' },
+        y: 52,
         opacity: 0,
-        duration: 0.84,
+        duration: 0.88,
         stagger: 0.1,
         ease: 'power3.out',
       });
 
-      // Parallax sutil na coluna do meio no desktop
+      // Parallax sutil na coluna do meio
       const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       if (isDesktop) {
         gsap.to(`.${styles.col2}`, {
-          y: -32,
+          y: -40,
           ease: 'none',
           scrollTrigger: {
             trigger: `.${styles.desktopGrid}`,
@@ -83,32 +107,46 @@ export default function Projects({ data }: { data: any[] }) {
 
   const renderCard = (project: any) => (
     <article key={project.id} className={styles.card}>
-      {/* Imagem Real ou Fundo Sólido Ocupando 100% */}
-      {project.image ? (
-        <>
+      {/* Imagem do case */}
+      <div className={styles.imageWrapper}>
+        {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className={styles.bgRealImage}
+            className={styles.cardImage}
             loading="lazy"
             decoding="async"
           />
-          <div className={styles.imageOverlay} />
-        </>
-      ) : (
-        <div className={`${styles.bgImage} ${styles[`placeholder_${project.id}`]}`} />
-      )}
+        ) : (
+          <div className={`${styles.imagePlaceholder} ${styles[`placeholder_${project.id}`]}`} />
+        )}
+      </div>
 
-      {/* Conteúdo sobreposto */}
-      <div className={styles.content}>
-        <div className={styles.topRow}>
-          <span className={styles.companyBadge}>{project.company}</span>
+      {/* Conteúdo abaixo da imagem */}
+      <div className={styles.cardBody}>
+        <div className={styles.cardMeta}>
+          <span className={styles.companyLabel}>{project.company}</span>
         </div>
 
-        <div className={styles.bottomCol}>
-          <h3 className={styles.title}>{project.title}</h3>
-          <p className={styles.description}>{project.description}</p>
-        </div>
+        <h3 className={styles.cardTitle}>{project.title}</h3>
+        <p className={styles.cardDescription}>{project.description}</p>
+
+        {project.techs && project.techs.length > 0 && (
+          <div className={styles.techBadges}>
+            {project.techs.map((tech: string) => {
+              const s = TECH_COLORS[tech] ?? DEFAULT_TECH_STYLE;
+              return (
+                <span
+                  key={tech}
+                  className={styles.techBadge}
+                  style={{ backgroundColor: s.bg, color: s.color, borderColor: s.border }}
+                >
+                  {tech}
+                </span>
+              );
+            })}
+          </div>
+        )}
       </div>
     </article>
   );
@@ -128,7 +166,7 @@ export default function Projects({ data }: { data: any[] }) {
           <h2 className={styles.sectionTitle}>Cases & Projetos em Destaque</h2>
         </div>
 
-        {/* Grade 3 Colunas para Desktop e Tablet */}
+        {/* Grade 3 Colunas com offset dinâmico — Desktop */}
         <div className={styles.desktopGrid}>
           <div className={`${styles.column} ${styles.col1}`}>
             {col1.map(renderCard)}
@@ -155,7 +193,6 @@ export default function Projects({ data }: { data: any[] }) {
             {data.map(renderCard)}
           </div>
 
-          {/* Indicadores de Paginação do Carrossel */}
           <div className={styles.carouselDots}>
             {data.map((_, idx) => (
               <button
