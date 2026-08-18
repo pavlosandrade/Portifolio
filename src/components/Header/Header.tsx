@@ -114,36 +114,39 @@ export default function Header() {
     }
   }, [isOpen]);
 
-  // Scroll Spy Cinematográfico via Intersection Observer
+  // Scroll Spy Cinematográfico Exato
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-10% 0px -50% 0px', // Foco relaxado para conseguir pegar seções curtas no fim da página (ex: Contato)
-        threshold: 0,
+    const handleScrollSpy = () => {
+      // Se bateu no limite inferior (com pequena margem de segurança), força o Contato
+      if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight - 20) {
+        setActiveSection(navItems[navItems.length - 1].targetId);
+        return;
       }
-    );
 
-    // Atraso sutil para garantir que os elementos renderizaram (Next.js client behavior)
-    const timeout = setTimeout(() => {
-      navItems.forEach((item) => {
+      // Linha de gatilho virtual (1/3 da tela para baixo, perfeito para títulos)
+      const triggerLine = window.scrollY + window.innerHeight / 3;
+      let currentSection = '';
+
+      for (const item of navItems) {
         const el = document.getElementById(item.targetId);
-        if (el) observer.observe(el);
-      });
-    }, 500);
+        if (el) {
+          // Se o topo do elemento ultrapassou a linha de gatilho
+          if (el.offsetTop <= triggerLine) {
+            currentSection = item.targetId;
+          }
+        }
+      }
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    
+    // Pequeno atraso na montagem para garantir que o DOM renderizou
+    const timeout = setTimeout(() => handleScrollSpy(), 500);
 
     return () => {
+      window.removeEventListener('scroll', handleScrollSpy);
       clearTimeout(timeout);
-      navItems.forEach((item) => {
-        const el = document.getElementById(item.targetId);
-        if (el) observer.unobserve(el);
-      });
     };
   }, []);
 

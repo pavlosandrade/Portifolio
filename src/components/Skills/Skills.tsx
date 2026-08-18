@@ -17,12 +17,14 @@ import { VscAzureDevops } from 'react-icons/vsc';
 // Lucide Icons
 import { Layers, LayoutGrid, FileCode2, LineChart, Hexagon, Component } from 'lucide-react';
 
+import { basePath } from '../../services/data';
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Mapeamento de ícones para as chaves do data.ts
 const iconMap: Record<string, { icon?: React.ElementType, color?: string, imgSrc?: string }> = {
   // Linguagens
-  csharp: { imgSrc: '/images/icons/c%23-ico.svg' },
+  csharp: { imgSrc: `${basePath}/images/icons/c%23-ico.svg` },
   typescript: { icon: SiTypescript, color: '#3178C6' },
   javascript: { icon: SiJavascript, color: '#F7DF1E' },
   html5: { icon: SiHtml5, color: '#E34F26' },
@@ -37,20 +39,20 @@ const iconMap: Record<string, { icon?: React.ElementType, color?: string, imgSrc
   bootstrap: { icon: SiBootstrap, color: '#7952B3' },
 
   // Ícones difíceis de encontrar em pacotes oficiais - usando fallbacks bonitos e inquebráveis
-  abp: { imgSrc: '/images/icons/abp-ico.svg' },
-  mudblazor: { imgSrc: '/images/icons/mudblazor-ico.svg' },
+  abp: { imgSrc: `${basePath}/images/icons/abp-ico.svg` },
+  mudblazor: { imgSrc: `${basePath}/images/icons/mudblazor-ico.svg` },
 
   // Ferramentas & DevOps
-  figma: { imgSrc: '/images/icons/figma-ico.svg' },
+  figma: { imgSrc: `${basePath}/images/icons/figma-ico.svg` },
   azuredevops: { icon: VscAzureDevops, color: '#0078D7' },
   git: { icon: SiGit, color: '#F05032' },
   github: { icon: SiGithub, color: '#181717' },
-  clickup: { imgSrc: '/images/icons/clickup-ico.svg' },
+  clickup: { imgSrc: `${basePath}/images/icons/clickup-ico.svg` },
 
   // Inteligência Artificial (Ícones Customizados)
-  chatgpt: { imgSrc: '/images/icons/chatgpt-ico.svg' },
-  gemini: { imgSrc: '/images/icons/gemini-ico.svg' },
-  claude: { imgSrc: '/images/icons/claude-ico.svg' },
+  chatgpt: { imgSrc: `${basePath}/images/icons/chatgpt-ico.svg` },
+  gemini: { imgSrc: `${basePath}/images/icons/gemini-ico.svg` },
+  claude: { imgSrc: `${basePath}/images/icons/claude-ico.svg` },
 
   // Arquitetura & Boas Práticas
   architecture: { icon: Hexagon, color: '#0284C7' },
