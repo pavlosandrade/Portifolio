@@ -40,7 +40,20 @@ const TECH_COLORS: Record<string, { bg: string; color: string; border: string }>
 
 const DEFAULT_TECH_STYLE = { bg: '#f8fafc', color: '#475569', border: '#e2e8f0' };
 
-export default function Projects({ data }: { data: any[] }) {
+export interface Project {
+  id: string;
+  title: string;
+  company: string;
+  type?: string;
+  year?: string;
+  image?: string;
+  description: string;
+  link?: string;
+  techs?: string[];
+  aspectRatio?: string;
+}
+
+export default function Projects({ data }: { data: Project[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -105,7 +118,7 @@ export default function Projects({ data }: { data: any[] }) {
     return () => ctx.revert();
   }, []);
 
-  const renderCard = (project: any) => (
+  const renderCard = (project: Project) => (
     <article key={project.id} className={styles.card}>
       {/* Imagem do case */}
       <div className={styles.imageWrapper}>
