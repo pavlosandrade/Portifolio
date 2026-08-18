@@ -55,6 +55,9 @@ export default function Header() {
       // Remove o menu ativo ao retornar à Hero
       if (window.scrollY < 100) {
         setActiveSection('');
+      } else if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.offsetHeight - 20) {
+        // Se bateu no limite inferior da página em telas grandes, força o "Contato" (último item)
+        setActiveSection(navItems[navItems.length - 1].targetId);
       }
     };
     window.addEventListener('scroll', handleScrollEvent, { passive: true });
