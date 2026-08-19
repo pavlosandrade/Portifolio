@@ -20,6 +20,3 @@ export async function getProjects() {
   return projectsData;
 }
 
-export async function getProjectById(id: string) {
-  return projectsData.find(project => project.id === id);
-}
