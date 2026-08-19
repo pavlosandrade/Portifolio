@@ -8,14 +8,12 @@ import styles from './Skills.module.css';
 // React Icons
 import {
   SiJavascript, SiTypescript, SiHtml5, SiCss, SiReact, SiNextdotjs,
-  SiBlazor, SiDotnet, SiTailwindcss, SiBootstrap, SiFigma, SiGit,
-  SiGithub, SiClickup
+  SiBlazor, SiDotnet, SiTailwindcss, SiBootstrap, SiGit, SiGithub
 } from 'react-icons/si';
-import { TbBrandCSharp } from 'react-icons/tb';
 import { VscAzureDevops } from 'react-icons/vsc';
 
 // Lucide Icons
-import { Layers, LayoutGrid, FileCode2, LineChart, Hexagon, Component } from 'lucide-react';
+import { LayoutGrid, FileCode2, LineChart, Hexagon } from 'lucide-react';
 
 import { basePath } from '../../services/data';
 
