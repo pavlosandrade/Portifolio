@@ -97,7 +97,27 @@ export default function Hero({ data }: { data: any }) {
         </div>
       </div>
 
-      <div className={styles.scrollIndicator}>
+      <div 
+        className={styles.scrollIndicator} 
+        onClick={() => {
+          const nextSection = document.getElementById('projetos');
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const nextSection = document.getElementById('projetos');
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label="Rolar para a próxima seção"
+      >
         <div className={styles.scrollMouse}>
           <div className={styles.scrollDot} />
         </div>
